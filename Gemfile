@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
+gem 'activesupport'
 gem 'activeresource', '~> 4.0.0', require: 'active_resource'
 
 group :development do

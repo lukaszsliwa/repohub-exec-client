@@ -85,6 +85,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource (~> 4.0.0)
+  activesupport
   bundler (~> 1.0)
   jeweler (~> 2.0.1)
   rspec (~> 3.2)

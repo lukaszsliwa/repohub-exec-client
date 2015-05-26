@@ -1,7 +1,10 @@
+require 'active_support'
 require 'active_resource'
 
 module Exec
-  class Client
+  module Client
+    extend ActiveSupport::Autoload
+
     VERSION = '1.0.0'
 
     def self.configure(&block)
@@ -11,10 +14,10 @@ module Exec
     def self.configuration
       @configuration ||= Exec::Client::Configuration.new
     end
+
+    autoload :Configuration,  'exec-client/configuration'
+    autoload :Repository,     'exec-client/repository'
+    autoload :User,           'exec-client/user'
+    autoload :Key,            'exec-client/key'
   end
 end
-
-require_relative 'exec-client/configuration.rb'
-require_relative 'exec-client/repository.rb'
-require_relative 'exec-client/user.rb'
-require_relative 'exec-client/key.rb'
