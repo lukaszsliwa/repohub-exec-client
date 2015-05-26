@@ -1,6 +1,6 @@
 = exec-client
 
-Description goes here.
+Ruby Exec Server Client
 
 == Contributing to exec-client
  

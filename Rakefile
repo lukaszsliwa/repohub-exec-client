@@ -12,40 +12,16 @@ end
 require 'rake'
 
 require 'jeweler'
+require './lib/exec-client.rb'
+
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "exec-client"
-  gem.homepage = "http://github.com/lukaszsliwa/exec-client"
+  gem.homepage = "http://git.apptamers.com/repohub/exec-client"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Ruby Exec Server Client}
   gem.email = "lukasz.sliwa@apptamers.com"
   gem.authors = ["Łukasz Śliwa"]
-  # dependencies defined in Gemfile
+  gem.version = Exec::Client::VERSION
+
 end
 Jeweler::RubygemsDotOrgTasks.new
-
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
-desc "Code coverage detail"
-task :simplecov do
-  ENV['COVERAGE'] = "true"
-  Rake::Task['test'].execute
-end
-
-task :default => :test
-
-require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "exec-client #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
