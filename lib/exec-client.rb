@@ -14,7 +14,7 @@ module Exec
   end
 end
 
-require './lib/exec-client/configuration.rb'
-require './lib/exec-client/repository.rb'
-require './lib/exec-client/user.rb'
-require './lib/exec-client/key.rb'
+require_relative 'exec-client/configuration.rb'
+require_relative 'exec-client/repository.rb'
+require_relative 'exec-client/user.rb'
+require_relative 'exec-client/key.rb'
